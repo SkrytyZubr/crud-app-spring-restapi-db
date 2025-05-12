@@ -1,4 +1,8 @@
 package com.raa.restApiApp.company;
 
-public class CompanyService {
+import java.util.List;
+
+public interface CompanyService {
+    List<Company> getAllCompanies();
+
 }
