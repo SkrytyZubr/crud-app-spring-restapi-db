@@ -23,14 +23,14 @@ public class JobController {
     @PostMapping("/jobs")
     public ResponseEntity<String> createJob(@RequestBody Job job){
         jobService.createJob(job);
-        return new ResponseEntity<>("Job added successfully", HttpStatus.OK);
+        return new ResponseEntity<>("Job added successfully", HttpStatus.CREATED);
     }
 
     @GetMapping("/jobs/{id}")
     public ResponseEntity<Job> getJobById(@PathVariable Long id){
         Job job = jobService.getJobById(id);
         if (job != null){
-            return new ResponseEntity<>(job, HttpStatus.CREATED);
+            return new ResponseEntity<>(job, HttpStatus.FOUND);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
