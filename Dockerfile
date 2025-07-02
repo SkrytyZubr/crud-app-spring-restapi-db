@@ -5,6 +5,9 @@ WORKDIR /app
 # Skopiuj pliki projektu
 COPY mvnw .
 COPY .mvn .mvn
+
+RUN chmod +x mvnw
+
 COPY pom.xml .
 COPY src src
 
